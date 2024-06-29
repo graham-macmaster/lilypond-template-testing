@@ -1,0 +1,18 @@
+{
+    "name": "LilyPond",
+    "build": {
+        "dockerfile": "Dockerfile",
+        // Update 'VARIANT' to pick an LilyPond version: 2.22.0, 2.23.0, etc.
+        "args": { "VARIANT": "devel-fonts-ly2video" }
+    },
+    "runArgs": [
+        // Map sound devices (doesn't work on Windows, see https://github.com/microsoft/WSL/issues/689)
+        // "--device=/dev/snd:/dev/snd"
+    ],
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "lhl2617.vslilypond"
+    ],
+    // Connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode"
+}
