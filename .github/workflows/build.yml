@@ -86,22 +86,22 @@ jobs:
         id: slug
         run: echo "::set-output name=sha7::$(echo ${GITHUB_SHA} | cut -c1-7)"
       - name: Download the A4 build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ github.event.repository.name }}-a4-${{ steps.slug.outputs.sha7 }}
           path: a4
       - name: Download the Letter build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ github.event.repository.name }}-letter-${{ steps.slug.outputs.sha7 }}
           path: letter
       - name: Download the SVG build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ github.event.repository.name }}-svg-${{ steps.slug.outputs.sha7 }}
           path: svg
       - name: Download the MIDI build artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ github.event.repository.name }}-midi-${{ steps.slug.outputs.sha7 }}
           path: midi
